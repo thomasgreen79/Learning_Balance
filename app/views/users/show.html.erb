@@ -1,8 +1,8 @@
 <% require 'geoip' %>
 <% require 'httparty' %>
 
-<% #@info = GeoIP.new(Rails.root.join("app/assets/lib/GeoLiteCity.dat")).city(request.remote_ip) %>
-<% @info = GeoIP.new(Rails.root.join("app/assets/lib/GeoLiteCity.dat")).city('96.18.100.75') %>
+<% @info = GeoIP.new(Rails.root.join("app/assets/lib/GeoLiteCity.dat")).city(request.remote_ip) %>
+<% #@info = GeoIP.new(Rails.root.join("app/assets/lib/GeoLiteCity.dat")).city('96.18.100.75') %>
 
 <div class='profile'>
   <h1>Profile for: <%= @user.name %></h1>
@@ -12,12 +12,14 @@
   <% location_string = 'Could not be determined' %>
   <% temp_string = 'Could not be determined' %>
 
-  <% if !@info.city_name.empty? %>
-    <% location_string = @info.city_name + ', ' + @info.real_region_name %>
-    <% url = 'http://api.wunderground.com/api/3a24e998cdf10373/conditions/q/' + @info.region_name + '/' + @info.city_name + '.json' %>
-    <% response = HTTParty.get(url) %>
-    <% if !response.parsed_response['current_observation'].nil? %>
-      <% temp_string = response.parsed_response['current_observation']['temperature_string'] %>
+  <% if !@info.nil? %>
+    <% if !@info.city_name.empty? %>
+      <% location_string = @info.city_name + ', ' + @info.real_region_name %>
+      <% url = 'http://api.wunderground.com/api/3a24e998cdf10373/conditions/q/' + @info.region_name + '/' + @info.city_name + '.json' %>
+      <% response = HTTParty.get(url) %>
+      <% if !response.parsed_response['current_observation'].nil? %>
+        <% temp_string = response.parsed_response['current_observation']['temperature_string'] %>
+      <% end %>
     <% end %>
   <% end %>
 
