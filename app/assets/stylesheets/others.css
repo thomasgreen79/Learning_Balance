@@ -1,0 +1,136 @@
+#img {
+  margin-bottom: 15px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.minus-padding{
+  padding-right: 20px;
+}
+
+.navButton{
+  display: block;
+  margin-top: 10px;
+  width: 300px;
+  background-color: #77DD66;
+  color: black;
+  border-radius: 8px;    
+  text-align: center;
+}
+
+.navButton:hover{
+  text-decoration: none;
+}
+
+.sub{
+  /*visibility: hidden;*/
+  display: none;
+}
+
+.subNavButton{
+  display: block;
+  margin-top: 0px;
+  font-size: 0.7em;
+  padding-top: 10px;
+  padding-left: 20px;
+  width: 270px;
+  height:47px;
+  background-color: #77DD66;
+  color: #353535;
+  border-radius: 8px;
+}
+
+.subNavButton:hover{
+  text-decoration: none;
+}
+
+.small-gap{
+  margin-top: 30px;
+}
+
+.nav-sign-in-style{
+  margin-top: 75px;
+  margin-left: 40px;
+  font-size: 0.7em;
+}
+
+.nav-admin-style{
+  margin-top: 30px;
+  margin-left: 0px;
+  font-size: 0.5em;
+}
+
+.five-elem-info-box{
+  margin-left: 50px;
+  margin-bottom: 30px;
+  padding: 10px 10px 10px 20px;
+  background-color: #67DD97;
+  font-size: 1.8em;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.five-elem-image{
+  margin-left: 110px;
+  margin-bottom: 40px;
+}
+
+.five-elem-navbar{
+  margin-top: 200px;
+}
+
+.five-elem-nav-button{
+  margin-left: 30px;
+  margin-top: 10px;
+  width: 250px;
+  height: 60px;
+  font-size: 1.7em;
+  background-color: #67AA58;
+  border-radius: 10px;
+}
+
+.main-body-margin{
+  margin-left: 25px;
+}
+
+.resource-title{
+  font-size: 20pt;
+}
+
+.resource-author{
+  font-size: 14pt;
+}
+
+.resource-description{
+  font-size: 12pt;
+}
+
+.elements-header{
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+.elements-header-text{
+  line-height: 75px;
+  margin-left: 20px;
+  font-family: "URW Chancery L";
+  font-size: 55pt;
+}
+
+.elements-header-subtext{
+  margin-left: 40px;
+  margin-top: 10px;
+  font-family: 'Arial';
+  font-size: 18pt;
+}
+
+.elements-descrip-text{
+  margin-left: 60px;
+  margin-top: 40px;
+  font-family: "Arial";
+  font-size: 16pt;
+}

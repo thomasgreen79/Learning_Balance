@@ -1,0 +1,36 @@
+<h1>Add New Food To Database</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-2">
+      <%= form_for (@food) do |f| %>
+  
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label :category %>
+        <%= f.text_field :category, class: 'form-control' %>
+
+        <%= f.label :flavor %>
+        <%= f.text_field :flavor, class: 'form-control' %>
+
+        <%= f.label :temperature %>
+        <%= f.text_field :temperature, class: 'form-control' %>
+
+        <%= f.label :tonifies %>
+        <%= f.text_field :tonifies, class: 'form-control' %>
+
+        <%= f.label :regulates %>
+        <%= f.text_field :regulates, class: 'form-control' %>
+
+        <%= f.label :route %>
+        <%= f.text_field :route, class: 'form-control' %>
+
+        </br>
+        <%= f.submit 'Add Food', class: 'btn-primary, btn-lg' %>
+
+      <% end %>
+      </br>
+      <%= button_to "Back to Food List", foods_path, method: 'get' %>
+    </div>
+  </div>
+</div>

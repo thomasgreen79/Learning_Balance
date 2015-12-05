@@ -1,0 +1,11 @@
+Show all users with delete buttons
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <div class='col-md-3'><%= user.name %></div>
+      <div class='col-md-3'><%= user.last_login %></div>
+      <%= button_to "Delete User", user, method: :delete %>
+    </li>
+  <% end %>
+</ul>

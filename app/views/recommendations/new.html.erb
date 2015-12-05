@@ -1,0 +1,11 @@
+<h1>Recommendations#new</h1>
+<p>Find me in app/views/recommendations/new.html.erb</p>
+<% foods = Food.all %>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <% foods.each do |food| %>
+      <li><%= food.name %></li>
+    <% end %>
+  </ul>
+</div>

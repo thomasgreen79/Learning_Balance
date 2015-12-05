@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LearningBalance</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body onload="startTimer()">
+    <div class='top-image'>
+      <%= render 'layouts/header' %>
+    </div>
+    <div class="nav-bar">
+      <aside>
+        <section>
+          <h1>
+            <ul class='nav-list'>
+              <li><%= link_to "Welcome", root_url, class: 'navButton', method: 'get' %></li>
+              <li id="drop" class="navButton">Background</li>
+                <ul class="sub subNavBar">
+                  <li><%= link_to "Principles of TCM", background_path, class: 'subNavButton' %></li>
+                  <li><%= link_to "5 Element System", five_element_system_path, class: 'subNavButton' %></li>
+                  <li><%= link_to "Resources", resources_path, class: 'subNavButton' %></li>
+                </ul>
+              <li><%= link_to "Contact us", contact_path, class: 'navButton', method: 'get' %></li>
+              <% if logged_in? %>
+                <li><%= link_to "Using This Site", usage_path, class: 'navButton', method: 'get' %></li>
+                <li><%= link_to "Profile Page", current_user, class: 'navButton', method: 'get' %></li>
+              <% else %>
+                <li><%= link_to "Tour", tour1_path, class: 'navButton', method: 'get' %></li>
+              <% end %>
+            </ul>
+            <% if logged_in? %>
+              </br>
+            <% else %>
+              <div class='nav-sign-in-style'><strong>Sign in:</strong></div>
+            <% end %>
+            <ul class='nav-list' id="menu-v">
+              <% if logged_in? %>
+                <li><%= link_to "Logout", logout_path, class: 'navButton', method: 'delete' %></li>
+                <% if current_user.admin? %>
+                  <div class='nav-admin-style'><strong>Admin:</strong></div>
+                  <li><%= link_to "Foods", foods_path, class: 'navButton', method: 'get' %></li>
+                  <li><%= link_to "Users", users_path, class: 'navButton', method: 'get' %></li>
+                <% end %>
+              <% else %>
+                <li><%= link_to "Login", login_path, class: 'navButton', method: 'get' %></li>
+                <li><%= link_to "New User", signup_path, class: 'navButton', method: 'get' %></li>
+              <% end %>
+            </ul>
+          </h1>
+        </section>
+      </aside>
+    </div>
+    <div class='main-body'>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+      <%= yield %>
+    </div>
+</body>
+</html>

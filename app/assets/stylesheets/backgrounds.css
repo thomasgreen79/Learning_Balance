@@ -1,0 +1,15 @@
+.foods-list-title{
+  background-color: #333333;
+  color: #EEEEEE;
+  border-radius: 10px;
+}
+
+.foods-list{
+  margin-bottom: 15px;
+  background-color: #44DDFF;
+  border-radius: 15px;
+}
+
+.profile {
+  padding-left: 20px;
+}

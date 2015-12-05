@@ -1,0 +1,41 @@
+<div class='row'>
+  <div class='col-md-2'><h1>All Foods</h1></div>
+  <%= button_to 'Add New Food', new_food_path, method: 'get', class: 'col-md-offset-2 btn-lg' %>
+</div>
+<div class='container-fluid foods-list'>
+  <ul class="foods">
+      <h3>
+        <div class='row'>
+        <li>
+          <div class='col-md-1'>Name</div>
+          <div class='col-md-1'>Category</div>
+          <div class='col-md-1'>Flavor</div>
+          <div class='col-md-1'>Tonifies</div>
+          <div class='col-md-2'>Regulates</div>
+          <div class='col-md-3'>Route</div>
+          <div class='col-md-1'>Temperature</div>
+        </li>
+        </div>
+      </h3>
+      </br>
+      <% @foods.each do |food| %>
+        <div class='row'>
+        <li>
+          <div class='col-md-1'><%= food.name %></div>
+          <div class='col-md-1'><%= food.category %></div>
+          <div class='col-md-1'><%= food.flavor %></div>
+          <div class='col-md-1'><%= food.tonifies %></div>
+          <div class='col-md-2'><%= food.regulates %></div>
+          <div class='col-md-3'><%= food.route %></div>
+          <div class='col-md-1'><%= food.temperature %></div>
+          <div class='col-md-2'>
+            <div class='row'>
+              <div class='col-md-3 col-md-offset-3'><%= button_to "Edit", edit_food_path(food.id), method: :get %></div>
+              <div class='col-md-3'><%= button_to "Delete", food, method: :delete %></div>
+            </div>
+          </div>
+        </li>
+        </div>
+      <% end %>
+  </ul>
+</div>

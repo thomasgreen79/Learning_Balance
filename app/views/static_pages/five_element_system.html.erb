@@ -1,0 +1,35 @@
+<div class='main-body-margin'>
+  <div>
+    <p>
+      Brief description about the 5-element system
+    </p>
+  </div>
+  </br>
+
+  <div class='row'>
+    <div class='col-md-7 col-md-offset-1'>
+      <div class='five-elem-info-box'>Click on any of the elements to learn more about it.</div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-md-7 col-md-offset-1'>
+      <img src="assets/TCM_5Elements.png" usemap="#five_elem_circles" class="five-elem-image"/>
+    </div>
+
+    <div class='col-md-3 five-elem-navbar'>
+      <h2>Other background options:</h2>
+      <div><%= button_to "Principles of TCM", background_path, class: 'five-elem-nav-button', method: "get" %></div>
+      <div><%= button_to "Resources", resources_path, class: 'five-elem-nav-button', method: "get" %></div>
+    </div>
+
+    </br>
+  </div>
+</div>
+
+<map name="five_elem_circles">
+  <area shape="circle" coords="345, 115, 110" href=<%= fire_path %> title="Learn about the Fire element" alt="Fire Element"/>
+  <area shape="circle" coords="120, 280, 110" href=<%= wood_path %> title="Learn about the Wood element" alt="Wood Element"/>
+  <area shape="circle" coords="560, 280, 110" href=<%= earth_path %> title="Learn about the Earth element" alt="Earth Element"/>
+  <area shape="circle" coords="210, 525, 110" href=<%= water_path %> title="Learn about the Water element" alt="Water Element"/>
+  <area shape="circle" coords="490, 525, 110" href=<%= metal_path %> title="Learn about the Metal element" alt="Metal Element"/>
+</map>

@@ -1,0 +1,63 @@
+<% require 'geoip' %>
+<% require 'httparty' %>
+
+<% #@info = GeoIP.new(Rails.root.join("app/assets/lib/GeoLiteCity.dat")).city(request.remote_ip) %>
+<% @info = GeoIP.new(Rails.root.join("app/assets/lib/GeoLiteCity.dat")).city('96.18.100.75') %>
+
+<div class='profile'>
+  <h1>Profile for: <%= @user.name %></h1>
+
+  </br>
+
+  <% location_string = 'Could not be determined' %>
+  <% temp_string = 'Could not be determined' %>
+
+  <% if !@info.city_name.empty? %>
+    <% location_string = @info.city_name + ', ' + @info.real_region_name %>
+    <% url = 'http://api.wunderground.com/api/3a24e998cdf10373/conditions/q/' + @info.region_name + '/' + @info.city_name + '.json' %>
+    <% response = HTTParty.get(url) %>
+    <% if !response.parsed_response['current_observation'].nil? %>
+      <% temp_string = response.parsed_response['current_observation']['temperature_string'] %>
+    <% end %>
+  <% end %>
+
+  <h2>Current Location: <%= location_string %></h2>
+  <h2>Current Temperature: <%= temp_string %></h2>
+
+  <%  season = nil %>
+  <%  now = Time.now %>
+  <% if (now.month <= 3 && now.day < 21) || (now.month == 12 && now.day >= 21) %>
+    <% season = 'winter' %>
+  <% elsif now.month <= 6 && now.day < 21 %>
+    <% season = 'spring' %>
+  <% elsif now.month <= 9 && now.day < 21 %>
+    <% season = 'summer' %>
+  <% else %>
+    <% season = 'autumn' %>
+  <% end %>
+
+  <h2>Current season: <%= season %></h2>
+
+
+  <div class='row'>
+    <div class='col-md-4'>
+      <% if !@user.diagnosed? %>
+        <%= button_to "Obtain initial diagnosis", diagnosis_path, method: 'get', class: 'btn-lg' %>
+      <% else %>
+        <%= button_to "Search For Food Recommendations", new_recommendation_path, method: 'get', class: 'btn-lg' %>
+      <% end %>
+    </div>
+    <div class='col-md-4 col-md-offset-2'>
+      <%= button_to "Balance A Meal", new_recommendation_path, method: 'get', class: 'btn-lg' %>
+    </div>
+  </div>
+
+  </br>
+
+  <% if @user.last_login.nil? %>
+    <h4>Welcome, <%= @user.name %>!</h4>
+  <% else %>
+    <h4>Last Login: <%= @user.last_login %></h4>
+  <% end %>
+
+</div>

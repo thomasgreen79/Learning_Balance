@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sweet: false
+  salty: false
+  pungent: false
+  bitter: false
+  sour: false
+  grain: false
+  meat_bean_dairy_nut: false
+  vegetable_fruit: false
+  temperature: 1
+
+two:
+  sweet: false
+  salty: false
+  pungent: false
+  bitter: false
+  sour: false
+  grain: false
+  meat_bean_dairy_nut: false
+  vegetable_fruit: false
+  temperature: 1
