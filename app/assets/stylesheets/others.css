@@ -93,9 +93,19 @@
   border-radius: 10px;
 }
 
+.five-elem-text{
+  font-family: 'Sawasdee';
+  font-size: 14pt;
+  font-weight: 900;
+}
+
 .main-body-margin{
   margin-left: 25px;
   margin-top: 20px;
+}
+
+.glyph-left-margin{
+  margin-left: 20px;
 }
 
 .resource-title{
