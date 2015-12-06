@@ -1,13 +1,34 @@
 <div class='elements-header'>
   <div class='row'>
-    <div class='col-md-1'><%= image_tag "fire_element_resized.png" %></div>
-    <div class='col-md-8'>
-      <div class='elements-header-text'>Fire</div>
-      <div class='elements-header-subtext'>Attributes: </div>
+    <div class='col-md-9'>
+      <div class='row'>
+        <div class='col-md-2'><%= image_tag "fire_element.png" %></div>
+        <div class='col-md-10'>
+          <div class='elements-header-text'>Fire</div>
+          <div class='elements-header-subtext'>
+            <span class='elements-att-span'>Flavor: Bitter</span>
+            <span class='elements-att-span'>Color: Red</span>
+            <span class='elements-att-span'>Yin Organ: Heart/Mind</span>
+            <span class='elements-att-span'>Yang Organ: Small Intestine</span>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-12'>
+          <div>
+            <p class='elements-descrip-text'>fire is the element of action... etc. etc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <h2>Other Element Descriptions:</h2>
+      <div><%= button_to "Earth Element", earth_path, class: 'elem-nav-button earth-nav-button', method: "get" %></div>
+      <div><%= button_to "Metal Element", metal_path, class: 'elem-nav-button metal-nav-button', method: "get" %></div>
+      <div><%= button_to "Water Element", water_path, class: 'elem-nav-button water-nav-button', method: "get" %></div>
+      <div><%= button_to "Wood Element", wood_path, class: 'elem-nav-button wood-nav-button', method: "get" %></div>
+      <div><%= button_to "Back to Chart", five_element_system_path, class: 'elem-nav-button elem-general-color', method: "get" %></div>
     </div>
   </div>
-</div>
-<div>
-  <p class='elements-descrip-text'>fire is the element of action... etc. etc.</p>
 </div>
 

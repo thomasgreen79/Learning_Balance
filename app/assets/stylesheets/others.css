@@ -83,13 +83,12 @@
   margin-top: 200px;
 }
 
-.five-elem-nav-button{
+.elem-nav-button{
   margin-left: 30px;
   margin-top: 10px;
   width: 250px;
   height: 60px;
   font-size: 1.7em;
-  background-color: #67AA58;
   border-radius: 10px;
 }
 
@@ -97,6 +96,32 @@
   font-family: 'Sawasdee';
   font-size: 14pt;
   font-weight: 900;
+}
+
+.elem-general-color{
+  /*background-color: #67AA58;*/
+  background-color: #6189CD;
+}
+
+.fire-nav-button{
+  background-color: #CD3232;
+}
+
+.earth-nav-button{
+  background-color: #EEEE48;
+}
+
+.metal-nav-button{
+  background-color: #FDFDFD;
+}
+
+.water-nav-button{
+  background-color: #121212;
+  color: #EDEDED
+}
+
+.wood-nav-button{
+  background-color: #44BC44;
 }
 
 .main-body-margin{
@@ -144,6 +169,10 @@
   margin-top: 40px;
   font-family: "Arial";
   font-size: 16pt;
+}
+
+.elements-att-span{
+  margin-right: 15px;
 }
 
 .background-header{

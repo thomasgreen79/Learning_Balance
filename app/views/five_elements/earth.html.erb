@@ -1,12 +1,31 @@
 <div class='elements-header'>
   <div class='row'>
-    <div class='col-md-1'><%= image_tag "earth_element.png" %></div>
-    <div class='col-md-8'>
-      <div class='elements-header-text'>Earth</div>
-      <div class='elements-header-subtext'>Attributes:</div>
+    <div class='col-md-9'>
+      <div class='row'>
+        <div class='col-md-2'><%= image_tag "earth_element.png" %></div>
+        <div class='col-md-10'>
+          <div class='elements-header-text'>Earth</div>
+          <div class='elements-header-subtext'>
+            <span class='elements-att-span'>Flavor: Sweet</span>
+            <span class='elements-att-span'>Color: Yellow</span>
+            <span class='elements-att-span'>Yin Organ: Spleen</span>
+            <span class='elements-att-span'>Yang Organ: Stomach</span>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='elements-descrip-text col-md-12'>
+          <p>Earth is the element of healing... etc. etc.</p>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <h2>Other Element Descriptions:</h2>
+      <div><%= button_to "Fire Element", fire_path, class: 'elem-nav-button fire-nav-button', method: "get" %></div>
+      <div><%= button_to "Metal Element", metal_path, class: 'elem-nav-button metal-nav-button', method: "get" %></div>
+      <div><%= button_to "Water Element", water_path, class: 'elem-nav-button water-nav-button', method: "get" %></div>
+      <div><%= button_to "Wood Element", wood_path, class: 'elem-nav-button wood-nav-button', method: "get" %></div>
+      <div><%= button_to "Back to Chart", five_element_system_path, class: 'elem-nav-button elem-general-color', method: "get" %></div>
     </div>
   </div>
-</div>
-<div class='elements-descrip-text'>
-  <p>Earth is the element of healing... etc. etc.</p>
 </div>
