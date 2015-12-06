@@ -1,28 +1,25 @@
 <div class='main-body-margin'>
-  <div>
-    <p>
-      Brief description about the 5-element system
-    </p>
-  </div>
-  </br>
-
   <div class='row'>
-    <div class='col-md-7 col-md-offset-1'>
-      <div class='five-elem-info-box'>Click on any of the elements to learn more about it.</div>
-    </div>
-  </div>
-  <div class='row'>
-    <div class='col-md-7 col-md-offset-1'>
-      <%= image_tag("TCM_5Elements.png", usemap: "#five_elem_circles", class: "five-elem-image") %>
-    </div>
+    <div class='col-md-8'>
+      <div>
+        Brief description about the 5-element system
+      </div>
+      </br>
 
-    <div class='col-md-3 five-elem-navbar'>
+      <div class='col-md-11 col-md-offset-1'>
+        <div class='five-elem-info-box'>Click on any of the elements to learn more about it.</div>
+      </div>
+
+      <div class='col-md-11 col-md-offset-1'>
+        <%= image_tag("TCM_5Elements.png", usemap: "#five_elem_circles", class: "five-elem-image") %>
+      </div>
+      </br>
+    </div>
+    <div class='col-md-3 col-md-offset-1'>
       <h2>Other background options:</h2>
       <div><%= button_to "Principles of TCM", background_path, class: 'five-elem-nav-button', method: "get" %></div>
       <div><%= button_to "Resources", resources_path, class: 'five-elem-nav-button', method: "get" %></div>
     </div>
-
-    </br>
   </div>
 </div>
 

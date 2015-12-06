@@ -95,6 +95,7 @@
 
 .main-body-margin{
   margin-left: 25px;
+  margin-top: 20px;
 }
 
 .resource-title{
@@ -133,4 +134,20 @@
   margin-top: 40px;
   font-family: "Arial";
   font-size: 16pt;
+}
+
+.background-header{
+  font-family: 'Sawasdee';
+  font-weight: 900;
+}
+
+.background-subheader{
+  font-family: 'Sawasdee';
+  font-weight: 900;
+}
+
+.background-text{
+  font-family: 'Sawasdee';
+  font-size: 1.5em;
+  font-weight: 900;
 }
