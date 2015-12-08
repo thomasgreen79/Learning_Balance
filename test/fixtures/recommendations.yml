@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  heavy: false
+  phlegm: false
+  temp: 1
+  wandering_pains: false
+  chills_and_fever: false
+  foods_all: false
+  foods_grains: false
+  foods_vegetables: false
+  foods_fruit: false
+  foods_spices: false
+  foods_oils: false
+  foods_beverages: false
+  foods_supplements: false
+  foods_beans: false
+  foods_nuts: false
+  foods_fish: false
+  foods_meat: false
+  foods_dairy: false
+
+two:
+  heavy: false
+  phlegm: false
+  temp: 1
+  wandering_pains: false
+  chills_and_fever: false
+  foods_all: false
+  foods_grains: false
+  foods_vegetables: false
+  foods_fruit: false
+  foods_spices: false
+  foods_oils: false
+  foods_beverages: false
+  foods_supplements: false
+  foods_beans: false
+  foods_nuts: false
+  foods_fish: false
+  foods_meat: false
+  foods_dairy: false

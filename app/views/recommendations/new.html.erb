@@ -1,11 +1,116 @@
-<h1>Recommendations#new</h1>
-<p>Find me in app/views/recommendations/new.html.erb</p>
-<% foods = Food.all %>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example<span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <% foods.each do |food| %>
-      <li><%= food.name %></li>
-    <% end %>
-  </ul>
+<div class='main-body-margin'>
+  <span>Recommendation</span>
+  <div class='row'>
+  <%= form_for(@recommendation) do |f| %>
+    <div class= 'col-md-6'>
+      <span class='rec-header'><strong>Check the box of any description you're currently feeling</strong></span>
+      <div class='rec-option-list'>
+        <div class='rec-option1'>
+          <%= f.check_box :heavy %>
+          <%= f.label :heavy, "Heaviness in limbs/Sluggishness" %>
+        </div>
+
+        <div class='rec-option1'>
+          <%= f.check_box :phlegm %>
+          <%= f.label :phlegm, "Excessive phlegm/Stickiness" %>
+        </div>
+
+        <div class='rec-option1'>
+          <%= f.check_box :wandering_pains %>
+          <%= f.label :wandering_pains, "Wandering Pains" %>
+        </div>
+
+        <div class='rec-option1'>
+          <%= f.check_box :chills_and_fever %>
+          <%= f.label :chills_and_fever, "Alternating chills and fever" %>
+        </div>
+
+        <div class='rec-option2'>
+          <%= f.label :temp, "Rate the temperature in your body"%>
+          <div class='row rec-option2'>
+            <div class='col-md-1'>Cold</div>
+            <div class='col-md-10'><%= f.range_field :temp, min: 0, max: 360 %></div>
+            <div class='col-md-1'>Hot</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='col-md-5 col-md-offset-1'>
+      <span class='rec-header'><strong>Select any food category you're currently craving</strong></span>
+      <div class='rec-option-list'>
+        <div class='rec-option3'>
+          <%= f.check_box :foods_all %>
+          <%= f.label :foods_all, "All" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_grains %>
+          <%= f.label :foods_grains, "Grains" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_vegetables %>
+          <%= f.label :foods_vegetables, "Vegetables" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_fruit %>
+          <%= f.label :foods_fruit, "Fruits" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_spices %>
+          <%= f.label :foods_spices, "Herbs and Spices" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_oils %>
+          <%= f.label :foods_oils, "Oils and Condiments" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_beverages %>
+          <%= f.label :foods_beverages, "Beverages" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_supplements %>
+          <%= f.label :foods_supplements, "Supplements" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_beans %>
+          <%= f.label :foods_beans, "Beans" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_nuts %>
+          <%= f.label :foods_nuts, "Nuts and Seeds" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_fish %>
+          <%= f.label :foods_fish, "Fish" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_meat %>
+          <%= f.label :foods_meat, "Meat" %>
+        </div>
+
+        <div class='rec-option3'>
+          <%= f.check_box :foods_dairy %>
+          <%= f.label :foods_dairy, "Dairy" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class='col-md-offset-5 btn btn-lg'>
+    <div>
+      <%= f.submit "Search for Foods" %>
+    </div>
+  </div>
+  <% end %>
 </div>

@@ -1,0 +1,10 @@
+<ul>
+<% currentCat = "" %>
+<% @foods.each do |food| %>
+  <% if food.category != currentCat %>
+    <% currentCat = food.category %>
+    <li class='recommend-cat'><%= currentCat %></li>
+  <% end %>
+  <li class='recommend-item'><%= food.name %></li>
+<% end %>
+</ul>

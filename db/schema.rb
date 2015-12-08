@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127050536) do
+ActiveRecord::Schema.define(version: 20151208034303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,29 @@ ActiveRecord::Schema.define(version: 20151127050536) do
     t.integer  "temperature"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "recommendations", force: :cascade do |t|
+    t.boolean  "heavy"
+    t.boolean  "phlegm"
+    t.integer  "temp"
+    t.boolean  "wandering_pains"
+    t.boolean  "chills_and_fever"
+    t.boolean  "foods_all"
+    t.boolean  "foods_grains"
+    t.boolean  "foods_vegetables"
+    t.boolean  "foods_fruit"
+    t.boolean  "foods_spices"
+    t.boolean  "foods_oils"
+    t.boolean  "foods_beverages"
+    t.boolean  "foods_supplements"
+    t.boolean  "foods_beans"
+    t.boolean  "foods_nuts"
+    t.boolean  "foods_fish"
+    t.boolean  "foods_meat"
+    t.boolean  "foods_dairy"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|

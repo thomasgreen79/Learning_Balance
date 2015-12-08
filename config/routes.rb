@@ -43,9 +43,13 @@ Rails.application.routes.draw do
 
   delete 'logout' => 'session#destroy'
 
+  get 'food_recommendation' => 'recommendations#show'
+
   resources :users
 
   resources :foods
+
+  resources :recommendations
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
