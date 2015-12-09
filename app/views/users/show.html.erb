@@ -43,7 +43,7 @@
 
   <div class='row'>
     <div class='col-md-4'>
-      <% if !@user.diagnosed? %>
+      <% if @user.diagnosed == "None" %>
         <%= button_to "Obtain initial diagnosis", diagnosis_path, method: 'get', class: 'btn-lg' %>
       <% else %>
         <%= button_to "Search For Food Recommendations", new_recommendation_path, method: 'get', class: 'btn-lg' %>

@@ -263,3 +263,20 @@
   margin-left: 20px;
   font-size: 14pt;
 }
+
+.welcome-main-body{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.welcome-header{
+  font-family: "URW Chancery L";
+  font-size: 60pt;
+}
+
+.welcome-body{
+  font-family: "DejaVu Sans, Book";
+  font-size: 26pt;
+  margin-top: 40px;
+  margin-left: 30px;
+}
