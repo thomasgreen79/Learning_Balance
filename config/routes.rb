@@ -33,6 +33,10 @@ Rails.application.routes.draw do
 
   get 'diagnosis' => 'diagnosis#new'
 
+  get 'diagnoses' => 'diagnosis#new'
+
+  post 'diagnoses' => 'diagnosis#create'
+
   get 'new_recommendation' => 'recommendations#new'
 
   get 'add_food' => 'foods#new'
@@ -45,11 +49,15 @@ Rails.application.routes.draw do
 
   get 'food_recommendation' => 'recommendations#show'
 
+  get 'show_diagnosis' => 'diagnosis#show'
+
   resources :users
 
   resources :foods
 
   resources :recommendations
+
+  resources :diagnosis
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

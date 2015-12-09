@@ -1,2 +1,258 @@
-<h1>Diagnosis#new</h1>
-<p>Find me in app/views/diagnosis/new.html.erb</p>
+<h1>Diagnosis</h1>
+
+<%= form_for @diagnosis do |f| %>
+  <div class='row'>
+  <div class='col-md-2'>
+    <div>
+      <%= f.check_box :dry_throat %>
+      <%= f.label :dry_throat %>
+    </div>
+
+    <div>
+      <%= f.check_box :insomnia %>
+      <%= f.label :insomnia %>
+    </div>
+
+    <div>
+      <%= f.check_box :nervousness %>
+      <%= f.label :nervousness %>
+    </div>
+
+    <div>
+      <%= f.check_box :heat_in_palms %>
+      <%= f.label :heat_in_palms %>
+    </div>
+
+    <div>
+      <%= f.check_box :tiredness %>
+      <%= f.label :tiredness %>
+    </div>
+
+    <div>
+      <%= f.check_box :feeling_cold %>
+      <%= f.label :feeling_cold %>
+    </div>
+
+    <div>
+      <%= f.check_box :desire_for_hot_drinks %>
+      <%= f.label :desire_for_hot_drinks %>
+    </div>
+
+    <div>
+      <%= f.check_box :lack_of_motivation %>
+      <%= f.label :lack_of_motivation %>
+    </div>
+
+    <div>
+      <%= f.check_box :reduced_appetite %>
+      <%= f.label :reduced_appetite %>
+    </div>
+
+    <div>
+      <%= f.check_box :shortness_of_breath %>
+      <%= f.label :shortness_of_breath %>
+    </div>
+
+    <div>
+      <%= f.check_box :weak_voice %>
+      <%= f.label :weak_voice %>
+    </div>
+  </div>
+
+  <div class='col-md-2'>
+    <div>
+      <%= f.check_box :slight_sensitive_cold %>
+      <%= f.label :slight_sensitive_cold %>
+    </div>
+
+    <div>
+      <%= f.check_box :dizziness_on_standing %>
+      <%= f.label :dizziness_on_standing %>
+    </div>
+
+    <div>
+      <%= f.check_box :blurred_vision %>
+      <%= f.label :blurred_vision %>
+    </div>
+
+    <div>
+      <%= f.check_box :pale_lips %>
+      <%= f.label :pale_lips %>
+    </div>
+
+    <div>
+      <%= f.check_box :poor_memory %>
+      <%= f.label :poor_memory %>
+    </div>
+
+    <div>
+      <%= f.check_box :difficulty_getting_to_sleep %>
+      <%= f.label :difficulty_getting_to_sleep %>
+    </div>
+
+    <div>
+      <%= f.check_box :sense_of_anxiety %>
+      <%= f.label :sense_of_anxiety %>
+    </div>
+
+    <div>
+      <%= f.check_box :fever %>
+      <%= f.label :fever %>
+    </div>
+
+    <div>
+      <%= f.check_box :redness %>
+      <%= f.label :redness %>
+    </div>
+
+    <div>
+      <%= f.check_box :thirst %>
+      <%= f.label :thirst %>
+    </div>
+
+    <div>
+      <%= f.check_box :constipation %>
+      <%= f.label :constipation %>
+    </div>
+  </div>
+
+  <div class='col-md-2'>
+    <div>
+      <%= f.check_box :heaviness %>
+      <%= f.label :heaviness %>
+    </div>
+
+    <div>
+      <%= f.check_box :difficulty_urine %>
+      <%= f.label :difficulty_urine %>
+    </div>
+
+    <div>
+      <%= f.check_box :muzzy_head %>
+      <%= f.label :muzzy_head %>
+    </div>
+
+    <div>
+      <%= f.check_box :frustration %>
+      <%= f.label :frustration %>
+    </div>
+
+    <div>
+      <%= f.check_box :depression_and_irritable %>
+      <%= f.label :depression_and_irritable %>
+    </div>
+
+    <div>
+      <%= f.check_box :moody %>
+      <%= f.label :moody %>
+    </div>
+
+    <div>
+      <%= f.check_box :sighing %>
+      <%= f.label :sighing %>
+    </div>
+
+    <div>
+      <%= f.check_box :worse_for_stress %>
+      <%= f.label :worse_for_stress %>
+    </div>
+
+    <div>
+      <%= f.check_box :acute_stabbing_pain %>
+      <%= f.label :acute_stabbing_pain %>
+    </div>
+
+    <div>
+      <%= f.check_box :dark_blood %>
+      <%= f.label :dark_blood %>
+    </div>
+  </div>
+
+  <div class= 'col-md-6'>
+    <div class='row'>
+      <span class=''>Tongue:</span>
+    </div>
+    <div class='row'>
+      <div class='col-md-6'>
+        <div>
+          <%= f.check_box :tongue_pink %>
+          <%= f.label :tongue_pink %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_thin_white_coating %>
+          <%= f.label :tongue_thin_white_coating %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_teeth_marks %>
+          <%= f.label :tongue_teeth_marks %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_pale %>
+          <%= f.label :tongue_pale %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_thin_yellow_coating %>
+          <%= f.label :tongue_thin_yellow_coating %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_red %>
+          <%= f.label :tongue_red %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_white_greasy_coating %>
+          <%= f.label :tongue_white_greasy_coating %>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div>
+          <%= f.check_box :tongue_swollen %>
+          <%= f.label :tongue_swollen %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_purple %>
+          <%= f.label :tongue_purple %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_red_tip %>
+          <%= f.label :tongue_red_tip %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_yellow_greasy_coating %>
+          <%= f.label :tongue_yellow_greasy_coating %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_thick_white_coating %>
+          <%= f.label :tongue_thick_white_coating %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_no_coating %>
+          <%= f.label :tongue_no_coating %>
+        </div>
+
+        <div>
+          <%= f.check_box :tongue_cracks %>
+          <%= f.label :tongue_cracks %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-md-offset-5'>
+     <%= f.submit %>
+    </div>
+  </div>
+<% end %>

@@ -39,20 +39,22 @@ class RecommendationsController < ApplicationController
     if recommendation["phlegm"]
       phlegmString = "%Phlegm%"
     end
-    if recommendation["temp"] < 96 
-      hotString = "%Hot%"
-    end
-    if recommendation["temp"] < 96
-      warmString = "%Warm%"
-    end
-    if recommendation["temp"] < 96
-      neutralString = "%Neutral%"
-    end
-    if recommendation["temp"] < 96
-      coolString = "%Cool%"
-    end
-    if recommendation["temp"] < 96
-      coldString = "%Cold%"
+    if recommendation["wandering_pains"]
+      if recommendation["temp"] < 96 
+        hotString = "%Hot%"
+      end
+      if recommendation["temp"] > 48 and recommendation["temp"] < 168
+        warmString = "%Warm%"
+      end
+      if recommendation["temp"] > 120 and recommendation["temp"] < 240
+        neutralString = "%Neutral%"
+      end
+      if recommendation["temp"] > 192 and recommendation["temp"] < 312
+        coolString = "%Cool%"
+      end
+      if recommendation["temp"] > 264
+        coldString = "%Cold%"
+      end
     end
     if recommendation["foods_all"]
       allString = "%"
@@ -97,7 +99,16 @@ class RecommendationsController < ApplicationController
 #    if recommendation["wandering_pains"] or recommendation["chills_and_fever"]
 #      regulatesString += "Wind%"
 #    end
-    foodsReg = Food.where("regulates LIKE ? OR regulates LIKE ?", dampString, phlegmString)
+    if recommendation["wandering_pains"]
+      foodsTemp = Food.where("temperature LIKE ? OR temperature LIKE ? OR temperature LIKE ? OR temperature LIKE ? OR temperature LIKE ?", hotString, warmString,neutralString, coolString, coldString)
+      if recommendation["heavy"] or recommendation["phlegm"]
+        foodsReg = foodsTemp.where("regulates LIKE ? OR regulates LIKE ?", dampString, phlegmString)
+      else
+        foodsReg = foodsTemp
+      end
+    else
+      foodsReg = Food.where("regulates LIKE ? OR regulates LIKE ?", dampString, phlegmString)
+    end
     @foods = foodsReg.where("category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? OR category LIKE ? ", allString, grainsString, vegetablesString, fruitsString, spicesString, oilsString, beveragesString, supplementsString, beansString, nutsString, fishString, meatString, dairyString)
     session.delete(:recommendation)
   end
