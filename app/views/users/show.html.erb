@@ -45,6 +45,7 @@
       <% if @user.diagnosed == "None" %>
         <%= button_to "Obtain initial diagnosis", diagnosis_path, method: 'get', class: 'btn-lg' %>
       <% else %>
+        <%= "Diagnosis: " + @user.diagnosed %>
         <%= button_to "Search For Food Recommendations", new_recommendation_path, method: 'get', class: 'btn-lg' %>
       <% end %>
     </div>

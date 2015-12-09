@@ -208,7 +208,11 @@ class DiagnosisController < ApplicationController
       @max = @blood_stag_count
       @max_diag = "Blood Stagnation"
     end
+    user = User.find(current_user.id)
+    user.diagnosed = @max_diag
+    user.save
     session.delete(:diagnosis)
+    redirect_to current_user
   end
 
   private

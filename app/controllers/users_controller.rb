@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :skip_password_attribute, only: :update
+
   def index
     @users = User.all
   end
@@ -18,6 +20,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    current_user.diagnosed = session[':new_diag']
+    current_user.save
+    redirect_to current_user
+  end
+
   def show
     @user = User.find(params[:id])
   end
@@ -32,4 +40,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+  def skip_password_attribute
+    if params[:password].blank? && params[:password_validation].blank?
+      params.except!(:password, :password_validation)
+    end
+  end
 end
