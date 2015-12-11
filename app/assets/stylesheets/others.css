@@ -344,3 +344,14 @@
   list-style-type: none;
   font-size: 14pt;
 }
+
+.users-header{
+  font-size: 12pt;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.users-item{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

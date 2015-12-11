@@ -1,10 +1,16 @@
 Show all users with delete buttons
 
-<ul>
-  <% @users.each do |user| %>
+<ul class='foods'>
+  <div class='row'>
+    <li class='users-header'>
+      <div class='col-md-6'>Name</div>
+      <div class='col-md-3'>Last Login</div>
+    </li>
+  </div> 
+  <% @users.order(:id).each do |user| %>
     <li>
-      <div class='col-md-3'><%= user.name %></div>
-      <div class='col-md-3'><%= user.last_login %></div>
+      <div class='col-md-6 users-item'><%= user.name %></div>
+      <div class='col-md-3 users-item'><%= user.last_login %></div>
       <%= button_to "Delete User", user, method: :delete %>
     </li>
   <% end %>
