@@ -41,16 +41,28 @@
 
 
   <div class='row'>
-    <div class='col-md-4'>
+    <div class='col-md-6'>
       <% if @user.diagnosed == "None" %>
         <%= button_to "Obtain initial diagnosis", diagnosis_path, method: 'get', class: 'btn-lg' %>
       <% else %>
-        <%= "Diagnosis: " + @user.diagnosed %>
-        <%= button_to "Search For Food Recommendations", new_recommendation_path, method: 'get', class: 'btn-lg' %>
+        <div class='diagnosis-display'>
+          <%= "Diagnosis: " + @user.diagnosed %>
+        </div>
+        <div class='recommended-display'>
+          Recommended foods to include with each meal:
+        </div>
+        <div class='recommended-foods-list-display'>
+        <ul>
+          <% @foods.each do |food| %>
+            <%= food.name %>
+          <% end %>
+        </ul>
+        </div>
+        <%= button_to "Update diagnosis", diagnosis_path, method: 'get', class: 'btn' %>
       <% end %>
     </div>
-    <div class='col-md-4 col-md-offset-2'>
-      <%= button_to "Recommend A Food", new_recommendation_path, method: 'get', class: 'btn-lg' %>
+    <div class='col-md-4 col-md-offset-0'>
+      <%= button_to "Recommend A Food To Eat Now", new_recommendation_path, method: 'get', class: 'btn-lg' %>
     </div>
   </div>
 

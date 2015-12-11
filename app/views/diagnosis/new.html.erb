@@ -1,8 +1,9 @@
 <h1>Diagnosis</h1>
 
 <%= form_for @diagnosis do |f| %>
+  <div class='row diagnosis-table'>
   <div class='row'>
-  <div class='col-md-2'>
+  <div class='col-md-4'>
     <div>
       <%= f.check_box :dry_throat %>
       <%= f.label :dry_throat %>
@@ -59,7 +60,7 @@
     </div>
   </div>
 
-  <div class='col-md-2'>
+  <div class='col-md-4'>
     <div>
       <%= f.check_box :slight_sensitive_cold %>
       <%= f.label :slight_sensitive_cold %>
@@ -116,7 +117,7 @@
     </div>
   </div>
 
-  <div class='col-md-2'>
+  <div class='col-md-4'>
     <div>
       <%= f.check_box :heaviness %>
       <%= f.label :heaviness %>
@@ -167,13 +168,13 @@
       <%= f.label :dark_blood %>
     </div>
   </div>
+  </div>
 
-  <div class= 'col-md-6'>
-    <div class='row'>
-      <span class=''>Tongue:</span>
+    <div class='row tongue-header'>
+      <span class='tongue-body'>Tongue - Look in a mirror and select boxes which best match appearance of tongue:</span>
     </div>
-    <div class='row'>
-      <div class='col-md-6'>
+  <div class='row tongue-table'>
+      <div class='col-md-4'>
         <div>
           <%= f.check_box :tongue_pink %>
           <%= f.label :tongue_pink %>
@@ -210,7 +211,7 @@
         </div>
       </div>
 
-      <div class='col-md-6'>
+      <div class='col-md-4'>
         <div>
           <%= f.check_box :tongue_swollen %>
           <%= f.label :tongue_swollen %>
@@ -248,10 +249,9 @@
       </div>
     </div>
   </div>
-  </div>
 
   <div class='row'>
-    <div class='col-md-offset-5'>
+    <div class='col-md-offset-5 btn-lg'>
      <%= f.submit %>
     </div>
   </div>

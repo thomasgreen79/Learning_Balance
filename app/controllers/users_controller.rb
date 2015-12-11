@@ -28,6 +28,35 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.diagnosed != "None"
+      if @user.diagnosed == "Yin Deficiency"
+        @foods = Food.where("tonifies = 'Yin'")
+      end
+      if @user.diagnosed == "Yang Deficiency"
+        @foods = Food.where("tonifies = 'Yang'")
+      end
+      if @user.diagnosed == "Qi Deficiency"
+        @foods = Food.where("tonifies = 'Qi'")
+      end
+      if @user.diagnosed == "Blood Deficiency"
+        @foods = Food.where("tonifies = 'Blood'")
+      end
+      if @user.diagnosed == "Internal Heat"
+        @foods = Food.where("regulates = 'Heat'")
+      end
+      if @user.diagnosed == "Internal Cold"
+        @foods = Food.where("regulates = 'Cold'")
+      end
+      if @user.diagnosed == "Internal Damp"
+        @foods = Food.where("regulates = 'Damp'")
+      end
+      if @user.diagnosed == "Qi Stagnation"
+        @foods = Food.where("regulates = 'Qi_Circulation'")
+      end
+      if @user.diagnosed == "Blood Stagnation"
+        @foods = Food.where("regulates = 'Blood_Circulation'")
+      end
+    end
   end
 
   def destroy

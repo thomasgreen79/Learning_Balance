@@ -280,3 +280,67 @@
   margin-top: 40px;
   margin-left: 30px;
 }
+
+.contact-main-body{
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.contact-title{
+  font-family: "DejaVu Sans, Book";
+  font-size: 32pt;
+}
+
+.contact-header{
+  margin-top: 20px;
+  margin-left: 50px;
+  font-family: "DejaVu Sans, Book";
+  font-size: 24pt;
+}
+
+.contact-body{
+  margin-top: 10px;
+  margin-left: 70px;
+  font-family: "Sawasdee";
+  font-size: 18pt;
+}
+
+.diagnosis-table{
+  margin-top: 20px;
+  margin-left: 50px;
+  font-size: 16pt;
+}
+
+.tongue-header{
+  margin-top: 35px;
+}
+
+.tongue-body{
+  font-family: "Sawasdee";
+  font-size: 20pt;
+  font-weight: 800;
+}
+
+.tongue-table{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 16pt;
+}
+
+.diagnosis-display{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20pt;
+}
+
+.recommended-display{
+  font-size: 16pt;
+}
+
+.recommended-foods-list-display{
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  list-style-type: none;
+  font-size: 14pt;
+}

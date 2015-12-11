@@ -27,7 +27,6 @@
                 <li><%= link_to "Using This Site", usage_path, class: 'navButton', method: 'get' %></li>
                 <li><%= link_to "Profile Page", current_user, class: 'navButton', method: 'get' %></li>
               <% else %>
-                <li><%= link_to "Tour", tour1_path, class: 'navButton', method: 'get' %></li>
               <% end %>
             </ul>
             <% if logged_in? %>
@@ -60,3 +59,4 @@
     </div>
 </body>
 </html>
+<% #<li><%= link_to "Tour", tour1_path, class: 'navButton', method: 'get' %>
